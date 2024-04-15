@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrimary"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:title="Rental App" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="Address"
+                android:padding="8dp"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnToggleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/buttonSecondary"
+                android:text="List"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <EditText
+                android:id="@+id/etRadiusFilter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="0.8"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="Radius"
+                android:paddingVertical="8dp"
+                android:text="4"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinner_propertyType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/spinner_background"
+                android:padding="8dp"
+                android:popupBackground="#FFFFFF"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:id="@+id/btnSetFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/buttonPrimary"
+                android:text="Search"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llListHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvListTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_weight="1"
+            android:text="Properties"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:hint="Sort"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:visibility="gone"
+        tools:listitem="@layout/main_row_layout" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rentMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".screens.property.RentActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundPrimary"
+            app:title="Rental App" />
+
+        <TextView
+            android:id="@+id/label_screenTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:text="Post Rental"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="Ad Title:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_adTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Enter the rental ad title" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:inputType="numberDecimal"
+            android:text="Rent: ($ CAD)"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_rentPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Enter the rent value ($ CAD)"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="Property Type:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_propertyType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="6dp"
+            android:background="@drawable/rounded_box"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Bedroom"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Bathroom"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Kitchen"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Closet"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_structure1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/label_bedRoom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Bedroom"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label_bathRoom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Bathroom"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label_kitchen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Kitchen"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label_closet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Closet"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <NumberPicker
+                    android:id="@+id/edit_bedroom"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+                <NumberPicker
+                    android:id="@+id/edit_bathroom"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+                <NumberPicker
+                    android:id="@+id/edit_kitchen"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+                <NumberPicker
+                    android:id="@+id/edit_closet"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Laundry"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Living Room"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Balcony"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Square Feet"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_structure2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/label_laundry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Laundry"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label_livingRoom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Living Room"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label_balcony"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Balcony"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label_squareFeet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="0.5"
+                    android:text="Square Feet"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <NumberPicker
+                    android:id="@+id/edit_laundry"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+                <NumberPicker
+                    android:id="@+id/edit_livingRoom"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+                <NumberPicker
+                    android:id="@+id/edit_balcony"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+                <NumberPicker
+                    android:id="@+id/edit_squareFeet"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="0.5"
+                    android:descendantFocusability="blocksDescendants"
+                    android:max="100"
+                    android:min="1"
+                    android:value="1" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="6dp"
+            android:background="@drawable/rounded_box"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="Latitude:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="Longitude:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_lagitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:hint="Enter the lat" />
+
+                <EditText
+                    android:id="@+id/edit_longitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:hint="Enter the lng" />
+
+                <Button
+                    android:id="@+id/button_latlngSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.3"
+                    android:backgroundTint="@color/buttonPrimary"
+                    android:text="Auto - fill"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Address:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:hint="Enter the rental address" />
+
+                <Button
+                    android:id="@+id/button_addressSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.5"
+                    android:backgroundTint="@color/buttonPrimary"
+                    android:text="Auto - fill"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="ZIP Code:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="City:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_zipCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:hint="Enter the ZIP code" />
+
+                <EditText
+                    android:id="@+id/edit_city"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Enter the city" />
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_currentLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/buttonPrimary"
+                    android:text="Current Location"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="Description:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="start|top"
+            android:hint="@string/field_rent_description"
+            android:inputType="textMultiLine"
+            android:lines="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="Additional Information:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_additionalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="start|top"
+            android:hint="Enter the rental additional information"
+            android:inputType="textMultiLine"
+            android:lines="5" />
+
+        <Switch
+            android:id="@+id/switch_active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:checked="true"
+            android:text="Active"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="12dp"
+                android:backgroundTint="@color/buttonSecondary"
+                android:text="@string/button_cancel"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="12dp"
+                android:backgroundTint="@color/buttonPrimary"
+                android:text="@string/button_salve"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="12dp"
+                android:backgroundTint="@color/buttonPrimary"
+                android:text="@string/button_back"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

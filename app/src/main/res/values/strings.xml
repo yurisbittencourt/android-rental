@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">rent-mobile-app</string>
+
+    <string name="addressSearchHint">Address, Zip Code, and City must to be informed for Address Search!</string>
+
+    <string name="button_salve">Save</string>
+    <string name="button_back">Back</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="field_rent_description">Enter the rental description</string>
+</resources>
